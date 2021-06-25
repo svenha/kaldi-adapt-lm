@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- 
 
 #
-# Copyright 2016, 2017, 2018 Guenter Bartsch
+# Copyright 2016, 2017, 2018 Guenter Bartsch, 2021 Florian Quirin
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,23 +25,13 @@ import os
 import sys
 import logging
 
-from optparse     import OptionParser
-from nltools      import misc
-from kaldiadaptlm import kaldi_adapt_lm
+from optparse import OptionParser
+from kaldi_adapt_lm import kaldi_adapt_lm
 
 DEFAULT_KALDI_ROOT = '/opt/kaldi'
 DEFAULT_WORK_DIR   = 'work'
 
-#
-# init 
-#
-
-misc.init_app ('kaldi-adapt-lm')
-
-#
 # commandline parsing
-#
-
 parser = OptionParser("usage: %prog [options] src_model_dir lm.arpa dst_model_name")
 
 parser.add_option ("-f", "--force", action="store_true", dest="force",
@@ -74,9 +64,7 @@ work_dir       = options.work_dir
 
 if os.path.exists(work_dir):
     if options.force:
-        #
         # cleanup leftovers from previous runs
-        #
         cmd = 'rm -rf %s' % work_dir
         logging.info(cmd)
         os.system(cmd)
@@ -86,11 +74,7 @@ if os.path.exists(work_dir):
 
 kaldi_root = options.kaldi_root
 
-#
 # main
-#
-
 kaldi_adapt_lm (kaldi_root, src_model_dir, lm_fn, work_dir, dst_model_name)
 
-logging.info ( "All done." )
-
+logging.info ("All done.")
