@@ -53,5 +53,5 @@ Apache-2.0 licensed unless otherwise noted in the script’s copyright headers.
 
 # Author(s)
 
-Original by [Guenter Bartsch](https://zamia-speech.org)
+Original by [Guenter Bartsch](https://zamia-speech.org)  
 Modified by Florian Quirin for https://github.com/SEPIA-Framework
