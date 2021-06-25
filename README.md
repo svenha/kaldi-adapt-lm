@@ -13,7 +13,7 @@ cp lm_corpus/sentences_en.txt lm.txt
 We also want to limit our language model to the vocabulary the audio model supports,
 so let's extract the vocabulary next:
 ```
-MODEL="models/kaldi-generic-en-tdnn_sp-latest"
+MODEL="models/kaldi-generic-en-tdnn_250"
 cut -f 1 -d ' ' ${MODEL}/data/local/dict/lexicon.txt >vocab.txt
 ```
 
@@ -24,7 +24,11 @@ lmplz -o 4 --prune 0 1 2 3 --limit_vocab_file vocab.txt --interpolate_unigrams 0
 
 Now we can start the kaldi model adaptation process:
 ```
-kaldi-adapt-lm ${MODEL} lm.arpa mymodel
+KALDI_DIR="kaldi"
+MODEL="models/kaldi-generic-en-tdnn_250"
+ARPA_LM="adapt/lm.arpa"
+MODEL_OUT="sepia-en-tdnn_250"
+python3 -m adapt -f -k ${KALDI_DIR} ${MODEL} ${ARPA_LM} ${MODEL_OUT}
 ```
 
 You should find a tar-file of the resulting model inside the work subdirectory.  

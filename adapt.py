@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- 
-
 #
 # Copyright 2016, 2017, 2018 Guenter Bartsch, 2021 Florian Quirin
 #
