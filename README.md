@@ -1,6 +1,6 @@
 # kaldi-adapt-lm
 
-Adapt Kaldi-ASR nnet3 chain models from Zamia-Speech.org to a different
+Adapt Kaldi-ASR nnet3 chain models (e.g. from Zamia-Speech.org) to a different
 language model.
 
 Constructive comments, patches and pull-requests are very welcome.
@@ -45,13 +45,14 @@ of RAM)
 Links
 -----
 
+- <https://github.com/SEPIA-Framework/sepia-stt-server> [SEPIA STT Server]
 - <http://kaldi-asr.org/> [Kaldi ASR] 
 - <https://zamia-speech.org> [Zamia Speech] 
 
 Requirements
 ------------
 
-- Python 2
+- Python 3
 - Kaldi ASR
 
 License
@@ -64,3 +65,4 @@ Author
 ------
 
 Guenter Bartsch \<<guenter@zamia.org>\>
+Modified by Florian Quirin for https://github.com/SEPIA-Framework
