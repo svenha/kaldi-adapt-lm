@@ -4,11 +4,13 @@ Adapt Kaldi-ASR nnet3 chain models (e.g. from Zamia-Speech.org) to a customized 
 
 ## Installation
 
+- Make sure you have 'git', 'zip' and 'unzip' available (`sudo apt-get install git zip unzip`).
 - Clone the repository: `git clone --single-branch https://github.com/fquirin/kaldi-adapt-lm.git`
 - Enter the directory: `cd kaldi-adapt-lm`
 - Download Kaldi and KenLM: `bash 1-download-requirements.sh`
-- Download a model to adapt: `bash 2-download-model.sh`
+- Download a model to adapt: `bash 2-download-model.sh en` (choose 'en' or 'de')
 - Test adaptation: `bash 3-adapt.sh`
+- Optional: `bash 4a-build-vosk-model.sh` (repackage model to use with Vosk-ASR)
 
 ## Tutorial
 
@@ -63,7 +65,12 @@ python3 -m adapt -f -k ${KALDI_DIR} ${MODEL} ${ARPA_LM} ${MODEL_OUT}
 ```
 
 You should find a tar-file of the resulting model inside the auto-generated `work` folder.  
+If you're planning to use the model with [Vosk-ASR](https://alphacephei.com/vosk/) (e.g. via SEPIA STT server) you can use `bash 4a-build-vosk-model.sh` to repackage it. The result can be found inside 'adapted_model'.  
   
+When you're done you can use `bash 5-clean-up.sh` to zip the content of 'adapted_model' to 'adapted_model.zip' and delete all working folders.
+
+### Note about memory
+
 If you see strange errors during the adaptation process it might be that you ran out of memory.
 I've tested the scripts on a Raspberry Pi 4 2GB using small language models and it worked fine, but requirements might increase exponentially depending on the size of you model.
 
@@ -79,6 +86,7 @@ I've tested the scripts on a Raspberry Pi 4 2GB using small language models and 
 - Python 3
 - Kaldi ASR
 - KenLM
+- zip and unzip (`sudo apt install zip unzip`)
 
 ## License
 
@@ -88,3 +96,4 @@ Apache-2.0 licensed unless otherwise noted in the script’s copyright headers.
 
 Original by [Guenter Bartsch](https://zamia-speech.org)  
 Modified by Florian Quirin for https://github.com/SEPIA-Framework
+Pre-built Kaldi and KenLM by [Michael Hansen](https://github.com/synesthesiam)
