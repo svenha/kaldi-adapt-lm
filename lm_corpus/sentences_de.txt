@@ -1,10 +1,14 @@
+acht
 cool
 dach
 dienstag
 dies ist ein test
 donnerstag
+drei
 dreißig
+eins
 freitag
+fünf
 fünfzig
 hallo
 hallo sepia
@@ -23,18 +27,21 @@ licht ausschalten
 licht im schlafzimmer ausschalten
 mittwoch
 montag
+neun
 null
 radio starten
 samstag
 schalte das licht im wohnzimmer ein
 schlafzimmer
-siebzig
+sech
+sieben
 siebzig
 sonntag
 spiele etwas musik
 starte ein radio mit rock musik
 stelle einen timer für dreißig minuten
 timer stellen für fünfzehn minuten
+vier
 wie geht es dir
 wie ist das wetter
 wie wird das wetter morgen
@@ -42,3 +49,4 @@ wie wird das wetter übermorgen
 wohnzimmer
 zehn
 zwanzig
+zwei
