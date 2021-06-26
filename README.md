@@ -2,14 +2,14 @@
 
 Adapt Kaldi-ASR nnet3 chain models (e.g. from Zamia-Speech.org) to a customized language model.
 
-## Installation
+## Installation / Quick-Start
 
 - Make sure you have 'git', 'zip' and 'unzip' available (`sudo apt-get install git zip unzip`).
 - Clone the repository: `git clone --single-branch https://github.com/fquirin/kaldi-adapt-lm.git`
 - Enter the directory: `cd kaldi-adapt-lm`
 - Download Kaldi and KenLM: `bash 1-download-requirements.sh`
 - Download a model to adapt: `bash 2-download-model.sh en` (choose 'en' or 'de')
-- Test adaptation: `bash 3-adapt.sh`
+- Test adaptation: `bash 3-adapt.sh en` (choose 'en' or 'de')
 - Optional: `bash 4a-build-vosk-model.sh` (repackage model to use with Vosk-ASR)
 
 ## Tutorial

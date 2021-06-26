@@ -2,13 +2,23 @@
 # Adapt model
 set -e
 echo ---------------------------LM_ADAPT_DE-------------------------------
+MODEL_LANG="help"
+if [ -n "$1" ]; then
+	MODEL_LANG="$1"
+fi
 KALDI_DIR="$(realpath kaldi)"
 KENLM_DIR="$(realpath kenlm)"
 export PATH="$KALDI_DIR:$KENLM_DIR:$PATH"
 MODEL="$(realpath model)"
 if [ -d "./adapt" ]; then rm -r "adapt"; fi
 mkdir -p adapt
-cp lm_corpus/sentences_de.txt adapt/lm.txt
+if [ "$MODEL_LANG" = "en" ]; then
+	cp lm_corpus/sentences_en.txt adapt/lm.txt
+elif [ "$MODEL_LANG" = "de" ]; then
+	cp lm_corpus/sentences_de.txt adapt/lm.txt
+else
+	echo "Unknown language argument. Use one of: 'en', 'de'"
+fi
 cut -f 1 -d ' ' ${MODEL}/data/local/dict/lexicon.txt >adapt/vocab.txt
 cd adapt
 #the old way - generates empty arap :-/
