@@ -1,5 +1,6 @@
 #!/bin/bash
 # Download Kaldi and KenLM
+echo ---------------------------DOWNLOAD_REQUIREMENTS-------------------------------
 mkdir -p kaldi
 mkdir -p kenlm
 if [ -n "$(uname -m | grep aarch64)" ]; then

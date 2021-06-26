@@ -18,6 +18,7 @@ elif [ "$MODEL_LANG" = "de" ]; then
 	cp lm_corpus/sentences_de.txt adapt/lm.txt
 else
 	echo "Unknown language argument. Use one of: 'en', 'de'"
+	exit
 fi
 cut -f 1 -d ' ' ${MODEL}/data/local/dict/lexicon.txt >adapt/vocab.txt
 cd adapt

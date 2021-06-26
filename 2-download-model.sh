@@ -1,5 +1,6 @@
 #!/bin/bash
 # Download base model to adapt
+echo ---------------------------BASE_MODEL_DOWNLOAD-------------------------------
 MODEL_LANG="help"
 if [ -n "$1" ]; then
 	MODEL_LANG="$1"
