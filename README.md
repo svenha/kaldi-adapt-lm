@@ -74,6 +74,12 @@ When you're done you can use `bash 5-clean-up.sh` to zip the content of 'adapted
 If you see strange errors during the adaptation process it might be that you ran out of memory.
 I've tested the scripts on a Raspberry Pi 4 2GB using small language models and it worked fine, but requirements might increase exponentially depending on the size of you model.
 
+## To-Do
+
+- Explain how to edit the model dictionary to add completely new words
+- Add new words automatically to a dict via G2P models e.g. using [Phonetisaurus](https://github.com/AdolfVonKleist/Phonetisaurus)
+- `model.conf` file is kind of random. Understand and improve if necessary.
+
 ## Links
 
 - [SEPIA STT Server](https://github.com/SEPIA-Framework/sepia-stt-server)
