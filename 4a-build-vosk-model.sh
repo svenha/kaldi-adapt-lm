@@ -9,8 +9,6 @@ mkdir -p adapted_model/am
 mkdir -p adapted_model/conf
 mkdir -p adapted_model/graph/phones
 mkdir -p adapted_model/ivector
-# copy from original model (this is kind of a default file that should probably be tweaked further)
-cp $ORG_MODEL/conf/model.conf adapted_model/conf/model.conf
 # collect
 cp $WORK_DIR/exp/adapt/final.mdl adapted_model/am/final.mdl
 cp $WORK_DIR/conf/mfcc_hires.conf adapted_model/conf/mfcc.conf
@@ -21,6 +19,9 @@ cp $WORK_DIR/exp/adapt/graph/phones.txt adapted_model/graph/phones.txt
 cp $WORK_DIR/exp/adapt/graph/words.txt adapted_model/graph/words.txt
 cp $WORK_DIR/exp/adapt/graph/phones/word_boundary.int adapted_model/graph/phones/word_boundary.int
 cp $WORK_DIR/exp/extractor/* adapted_model/ivector/
-mv adapted_model/ivector/splice_opts adapted_model/ivector/splice.conf
+rm adapted_model/ivector/splice_opts
 cp $WORK_DIR/conf/online_cmvn.conf adapted_model/ivector/online_cmvn.conf
+# copy from original model (this is kind of a default file that should probably be tweaked further)
+cp $ORG_MODEL/conf/model.conf adapted_model/conf/model.conf
+cp $ORG_MODEL/ivectors_test_hires/conf/splice.conf adapted_model/ivector/splice.conf
 echo "DONE. Check folder: 'adapted_model'"
