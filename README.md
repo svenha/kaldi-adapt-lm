@@ -1,20 +1,27 @@
-# kaldi-adapt-lm
+# kaldi-adapt-lm - ASR Language Model Adaptation
 
-Adapt Kaldi-ASR nnet3 chain models (e.g. from Zamia-Speech.org) to a customized language model.
+This repository helps you to build language models (LM) for automatic speech recognition (ASR) systems like Kaldi.  
+  
+By default it uses a given Kaldi-ASR nnet3 chain model (e.g. from Zamia-Speech.org) and a custom text corpus (list of normalized sentences) to build a new 4-gram/5-gram custom LM.
 
-## Installation / Quick-Start
+## Quick-Start
+
+This whole repository is optimized to be very lightweight (~250MB including Kaldi binaries, ASR model and text corpus) and if you use a small text corpus the adaptation process should finish in a few minutes, even on a Raspberry Pi 4 :-).
+Here are the steps to get started:
 
 - Make sure you have 'git', 'zip' and 'unzip' available (`sudo apt-get install git zip unzip`).
 - Clone the repository: `git clone --single-branch https://github.com/fquirin/kaldi-adapt-lm.git`
 - Enter the directory: `cd kaldi-adapt-lm`
-- Download Kaldi and KenLM: `bash 1-download-requirements.sh`
-- Download a model to adapt: `bash 2-download-model.sh en` (choose 'en' or 'de')
-- Test adaptation: `bash 3-adapt.sh en` (choose 'en' or 'de')
+- Download pre-built Kaldi and KenLM: `bash 1-download-requirements.sh`
+- Download base model to adapt: `bash 2-download-model.sh en` (included models: 'en', 'de')
+- Edit text corpus inside `lm_corpus` folder or create a new one
+- Run adaptation: `bash 3-adapt.sh en` (use same language code as in previous step)
 - Optional: `bash 4a-build-vosk-model.sh` (repackage model to use with Vosk-ASR)
+- Clean up with `bash 5-clean-up.sh` and copy the new model to your [STT server](https://github.com/SEPIA-Framework/sepia-stt-server)
 
 ## Tutorial
 
-This is a more detailed description of the adaptation step (see script [3-adapt.sh](3-adapt.sh)). If you haven't done already please follow the installation steps up to this point.
+This is a more detailed description of the adaptation step (see script [3-adapt.sh](3-adapt.sh)). If you haven't done already please follow the quick-start steps up to this point.
 
 ### Create a custom language model
 
@@ -101,5 +108,5 @@ Apache-2.0 licensed unless otherwise noted in the script’s copyright headers.
 # Author(s)
 
 Original by [Guenter Bartsch](https://zamia-speech.org)  
-Modified by Florian Quirin for https://github.com/SEPIA-Framework
+Modified by Florian Quirin for https://github.com/SEPIA-Framework  
 Pre-built Kaldi and KenLM by [Michael Hansen](https://github.com/synesthesiam)
