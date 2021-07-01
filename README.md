@@ -15,7 +15,8 @@ Here are the steps to get started:
 - Download pre-built Kaldi and KenLM: `bash 1-download-requirements.sh`
 - Download base model to adapt: `bash 2-download-model.sh en` (included models: 'en', 'de')
 - Edit text corpus inside `lm_corpus` folder or create a new one
-- Run adaptation: `bash 3-adapt.sh en` (use same language code as in previous step)
+- Start adaptation process: `bash 3-adapt.sh en` (use same language code as in previous step)
+- Wait for around 15min (RPi4, small language model)
 - Optional: `bash 4a-build-vosk-model.sh` (repackage model to use with Vosk-ASR)
 - Clean up with `bash 5-clean-up.sh` and copy the new model to your [STT server](https://github.com/SEPIA-Framework/sepia-stt-server)
 
@@ -86,6 +87,7 @@ I've tested the scripts on a Raspberry Pi 4 2GB using small language models and 
 - Explain how to edit the model dictionary to add completely new words
 - Add new words automatically to a dict via G2P models e.g. using [Phonetisaurus](https://github.com/AdolfVonKleist/Phonetisaurus)
 - `model.conf` file is kind of random. Understand and improve if necessary.
+- Optimize `kaldi_adapt_lm.py` and `templates` to build new model more efficiently if possible
 
 ## Links
 
@@ -93,6 +95,7 @@ I've tested the scripts on a Raspberry Pi 4 2GB using small language models and 
 - [Kaldi ASR](http://kaldi-asr.org)
 - [KenLM](https://github.com/kpu/kenlm)
 - [Zamia Speech](https://zamia-speech.org)
+- [Gruut-IPA](https://github.com/rhasspy/gruut-ipa)
 
 ## Requirements
 
@@ -109,4 +112,4 @@ Apache-2.0 licensed unless otherwise noted in the script’s copyright headers.
 
 Original by [Guenter Bartsch](https://zamia-speech.org)  
 Modified by Florian Quirin for https://github.com/SEPIA-Framework  
-Pre-built Kaldi and KenLM by [Michael Hansen](https://github.com/synesthesiam)
+Pre-built Kaldi and KenLM + Gruut-IPA by [Michael Hansen](https://github.com/synesthesiam)

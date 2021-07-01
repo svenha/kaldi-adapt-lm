@@ -68,7 +68,7 @@ cp conf/online_cmvn.conf $AMNAME/conf/online_cmvn.conf
 
 rm -f "$AMNAME.tar" "$AMNAME.tar.xz"
 tar cfv "$AMNAME.tar" $AMNAME
-xz -v -8 -T 12 "$AMNAME.tar"
+#xz -v -8 -T 12 "$AMNAME.tar"
 
 rm -r "$AMNAME"
 

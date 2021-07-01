@@ -2,7 +2,7 @@
 # Adapt model
 set -e
 echo ---------------------------LM_ADAPT_DE-------------------------------
-MODEL_LANG="help"
+MODEL_LANG="_"
 if [ -n "$1" ]; then
 	MODEL_LANG="$1"
 fi
