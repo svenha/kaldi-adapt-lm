@@ -19,5 +19,7 @@ elif [ "$MODEL_LANG" = "en_zamia_org" ]; then
 	wget https://goofy.zamia.org/zamia-speech/asr-models/kaldi-generic-en-tdnn_250-r20190609.tar.xz
 	mkdir model && tar --strip-components=1 -xf kaldi-generic-en-tdnn_250-r20190609.tar.xz -C model
 else
-	echo "Unknown language argument. Use one of: 'en', 'de', 'en_zamia_org', 'de_zamia_org'"
+	echo "Unknown language argument. Use one of: 'en', 'de', 'en_zamia_org', 'de_zamia_org'."
+	echo "To use your own model simply create the folder 'model' and place your files there."
+	echo "NOTE: Please check in advance if your model is compatible. You may need to rearrange files to match the required format."
 fi
