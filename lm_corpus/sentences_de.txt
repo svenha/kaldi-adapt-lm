@@ -1,4 +1,5 @@
 acht
+achtzig
 cool
 dach
 dienstag
@@ -33,8 +34,10 @@ radio starten
 samstag
 schalte das licht im wohnzimmer ein
 schlafzimmer
-sech
+sechs
+sechs uhr morgens
 sieben
+sieben uhr abends
 siebzig
 sonntag
 spiele etwas musik
@@ -42,6 +45,8 @@ starte ein radio mit rock musik
 stelle einen timer für dreißig minuten
 timer stellen für fünfzehn minuten
 vier
+wecker stellen für acht uhr dreißig
+wecker stellen für neun uhr fünfzehn
 wie geht es dir
 wie ist das wetter
 wie wird das wetter morgen
