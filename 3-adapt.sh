@@ -25,8 +25,8 @@ else
 fi
 # Optionally merge custom dictionary
 if [ -f "$MY_DICT" ]; then
-	echo "Mergin new words from '$MY_DICT' with original lexicon '$MODEL_LEXICON' ..."
-	sort -u --output="adapt/lexicon.txt" -t' ' -k1,1 "$MY_DICT" "$MODEL_LEXICON"
+	echo "Merging new words from '$MY_DICT' with original lexicon '$MODEL_LEXICON' ..."
+	sort -u  -t' ' -k1,1 "$MY_DICT" "$MODEL_LEXICON" | grep -a " " > adapt/lexicon.txt
 	rm "$MODEL_LEXICON"
 	cp "adapt/lexicon.txt" "$MODEL_LEXICON"
 fi
